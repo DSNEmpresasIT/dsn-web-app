@@ -113,7 +113,7 @@ export default function Business() {
           infinite={true}
           interval={5000}
           isPlaying={true}
-          className="h-screen"
+          // className="h-screen"
         >
           <Slider className="h-full careHeight">
             <Slide index={0} className="h-full">
