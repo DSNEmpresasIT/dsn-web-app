@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import * as Icon from "react-feather";
 
-export default function Navbar({ navClass, navJustify }) {
+export default function Navbar({ navClass = undefined, navJustify = undefined}) {
   const [isMenu, setisMenu] = useState(false);
   const [navbarTop, setNavbarTop] = useState(false);
 
@@ -208,7 +208,7 @@ export default function Navbar({ navClass, navJustify }) {
             </div>
           </div>
 
-          {navClass !== "nav-light" ? (
+          {/* {navClass !== "nav-light" ? (
             <ul className={`buy-button list-none space-x-1 mb-0`}>
               <li className="inline mb-0">
                 <Link
@@ -261,7 +261,7 @@ export default function Navbar({ navClass, navJustify }) {
                 </Link>
               </li>
             </ul>
-          )}
+          )} */}
 
           <div id="navigation" style={{ display: isMenu ? "block" : "none" }}>
             <ul className={`navigation-menu ${navClass} ${navJustify}`}>
@@ -270,10 +270,9 @@ export default function Navbar({ navClass, navJustify }) {
                   Home
                 </Link>
               </li>
-
               <li>
-                <Link href="/contact-one" className="sub-menu-item">
-                  Contact
+                <Link href="/contacto" className="sub-menu-item">
+                  Contacto
                 </Link>
               </li>
             </ul>
