@@ -3,28 +3,21 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-const Navbar = dynamic(() => import("./componets/Navbar/navbar"));
-const Footer = dynamic(() => import("./componets/Footer/footer"));
-const Switcher = dynamic(() => import("./componets/switcher"));
-const CookieModal = dynamic(() => import("./componets/cookieModal"));
-const CompanyLogo = dynamic(() => import("./componets/companyLogo"));
+import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
+import "../../node_modules/react-modal-video/css/modal-video.css";
+
 import * as Icon from "react-feather";
 import { BsCheckCircle } from "react-icons/bs";
 import { FaArrowRight } from "react-icons/fa";
 
 import ModalVideo from "react-modal-video";
-import "../../node_modules/react-modal-video/css/modal-video.css";
 
-import { CarouselProvider, Slider, Slide } from "pure-react-carousel";
-import "pure-react-carousel/dist/react-carousel.es.css";
-import KeyFeature from "./componets/keyFeatures";
 import { MdKeyboardArrowRight, MdOutlineJoinInner, MdOutlineSelectAll } from "react-icons/md";
 import { AiOutlineFire } from "react-icons/ai";
-// import Switcher from "./componets/switcher";
-// import Navbar from "./componets/Navbar/navbar";
-// import Footer from "./componets/Footer/footer";
-// import CompanyLogo from "./componets/companyLogo";
-// import CookieModal from "./componets/cookieModal";
+import { KeyFeature } from "./componets/commons/keyFeatures";
+
+const CompanyLogo = dynamic(() => import("./componets/commons/companyLogo"));
 
 export default function Business() {
   useEffect(() => {
@@ -103,8 +96,6 @@ export default function Business() {
   ];
   return (
     <>
-      <Navbar navClass="nav-light" />
-
       <section className="relative">
         <CarouselProvider
           naturalSlideWidth={100}
@@ -113,7 +104,7 @@ export default function Business() {
           infinite={true}
           interval={5000}
           isPlaying={true}
-          className="h-screen"
+          // className="h-screen"
         >
           <Slider className="h-full careHeight">
             <Slide index={0} className="h-full">
@@ -229,7 +220,7 @@ export default function Business() {
       </section>
 
       <section className="relative md:py-24 py-16 overflow-hidden">
-        <KeyFeature />
+        <KeyFeature btnFill={false} />
 
         <div className="container relative md:mt-24 mt-16">
           <div
@@ -645,10 +636,6 @@ export default function Business() {
           </div>
         </div>
       </section>
-
-      <Footer />
-      <Switcher />
-      <CookieModal />
     </>
   );
 }
