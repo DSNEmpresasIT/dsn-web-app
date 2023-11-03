@@ -21,9 +21,9 @@ export default function Business() {
     <>
       <CarouselComponent />      
       <PartnersComponent />
-      <section className="relative md:pt-24 pt-16">
+      {/* <section className="relative md:pt-24 pt-16">
         <KeyFeature btnFill={false} />
-      </section>
+      </section> */}
       <WhyUsComponent />
       <WeAreComponent />
       <FeaturesTwoComponent />
