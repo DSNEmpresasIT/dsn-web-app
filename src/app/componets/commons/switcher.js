@@ -57,8 +57,8 @@ export default function Switcher() {
             className="label bg-slate-900 dark:bg-white shadow dark:shadow-gray-800 cursor-pointer rounded-full flex justify-between items-center p-1 w-14 h-8"
             htmlFor="chk"
           >
-            {/* <HiOutlineMoon className="text-[20px] text-yellow-500" /> */}
-            {/* <HiOutlineSun className="text-[20px] text-yellow-500" /> */}
+            <HiOutlineMoon className="text-[20px] text-yellow-500" />
+            <HiOutlineSun className="text-[20px] text-yellow-500" />
             <span className="ball bg-white dark:bg-slate-900 rounded-full absolute top-[2px] left-[2px] w-7 h-7"></span>
           </label>
         </span>
@@ -91,7 +91,7 @@ export default function Switcher() {
             : "back-to-top fixed  text-lg rounded-full z-10 bottom-5 end-2 h-9 w-9 text-center bg-indigo-600 text-white leading-9 flex items-center justify-center"
         }`}
       >
-       arriba {/* <HiArrowSmUp /> */}
+       <HiArrowSmUp />
       </Link>
     </>
   );

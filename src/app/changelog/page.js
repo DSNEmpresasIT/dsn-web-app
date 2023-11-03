@@ -5,7 +5,7 @@ import dynamic from "next/dynamic"
 
 const Navbar = dynamic(()=>import('../componets/Navbar/navbar'));
 const Footer = dynamic(()=>import('../componets/Footer/footer'));
-const Switcher = dynamic(()=>import('../componets/switcher'));
+const Switcher = dynamic(()=>import('../componets/commons/switcher'));
 
 import * as Icon from 'react-feather';
 import {MdKeyboardArrowRight} from "react-icons/md"

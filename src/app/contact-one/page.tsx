@@ -11,7 +11,7 @@ const resend = new Resend('re_7EZfZM1X_2bEJLi2uBoPWEFpn9BJso2ed');
 
 const Navbar = dynamic(() => import("../componets/Navbar/navbar"));
 const Footer = dynamic(() => import("../componets/Footer/footer"));
-const Switcher = dynamic(() => import("../componets/switcher"));
+const Switcher = dynamic(() => import("../componets/commons/switcher"));
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import { FaRegEnvelope } from "react-icons/fa";

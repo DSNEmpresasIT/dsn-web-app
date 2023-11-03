@@ -26,8 +26,8 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/app/middleware/jsonBodyParser.js"  ],
+    "**/*.tsx", 
+"src/app/middleware/jsonBodyParser.js"],
   "exclude": [
     "node_modules"
   ]
