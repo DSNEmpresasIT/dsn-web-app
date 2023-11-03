@@ -1,7 +1,11 @@
 import "../app/assets/css/tailwind.css"
 import './assets/css/material.css'
+import dynamic from "next/dynamic";
 import { Nunito, Work_Sans, EB_Garamond, Kaushan_Script, Alex_Brush } from 'next/font/google'
 
+const Navbar = dynamic(() => import("./componets/Navbar/navbar"));
+const Footer = dynamic(() => import("./componets/Footer/smallFooter"));
+const Switcher = dynamic(() => import("./componets/commons/switcher"));
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -40,14 +44,20 @@ const alex = Alex_Brush({
 
 
 export const metadata = {
-  title: 'Techwind - Next Js Multipurpose Landing & Admin Dashboard Template',
-  description: 'Techwind - Next Js Multipurpose Landing & Admin Dashboard Template',
+  title: 'DSN Empresas',
+  description: 'DSN Empresas es la combinación perfecta entre marketing y tecnología dentro de Concordia, Entre Ríos y en el resto de las provincias de Argentina.',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html className="dark" lang="en" dir="LTR">
-      <body className={`${nunito.variable} ${work_sans.variable} ${eb_garamond.variable} ${kaushan.variable} ${alex.variable} font-nunito text-base text-black dark:text-white dark:bg-slate-900`}>{children}</body>
+      <body className={`${nunito.variable} ${work_sans.variable} ${eb_garamond.variable} ${kaushan.variable} ${alex.variable} font-nunito text-base text-black dark:text-white dark:bg-slate-900`}>
+        <Navbar navClass="nav-light" />
+        {children}
+        <Footer />
+        <Switcher />
+        {/* <CookieModal /> */}
+      </body>
     </html>
   )
 }
