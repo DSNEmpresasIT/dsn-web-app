@@ -44,8 +44,8 @@ const alex = Alex_Brush({
 
 
 export const metadata = {
-  title: 'Techwind - Next Js Multipurpose Landing & Admin Dashboard Template',
-  description: 'Techwind - Next Js Multipurpose Landing & Admin Dashboard Template',
+  title: 'DSN Empresas',
+  description: 'DSN Empresas es la combinación perfecta entre marketing y tecnología dentro de Concordia, Entre Ríos y en el resto de las provincias de Argentina.',
 }
 
 export default function RootLayout({ children }) {
