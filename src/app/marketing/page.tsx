@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
-const CookieModal = dynamic(() => import("../componets/commons/cookieModal"));
-const Switcher = dynamic(() => import("../componets/commons/switcher"));
+const CookieModal = dynamic(() => import("@/componets/commons/cookieModal"));
+const Switcher = dynamic(() => import("@/componets/commons/switcher"));
 
 import Lightbox from "react-18-image-lightbox";
 import "react-18-image-lightbox/style.css";
@@ -64,7 +64,7 @@ export default function IndexPhotography() {
   const handleMoveNext = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-  const handleImageClick = (index) => {
+  const handleImageClick = (index: number) => {
     setCurrentImageIndex(index);
     setisOpen(true);
   };

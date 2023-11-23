@@ -5,7 +5,7 @@ import * as Icon from "react-feather";
 import { FaArrowRight } from 'react-icons/fa';
 
 
-export const ItemComponent = ({ Icons, index, item, textButton = "Read More" }) => (
+export const ItemComponent = ({ Icons, index, item, textButton = "Read More" }: any) => (
   <div className="group text-center" key={index}>
     <Icons className="h-10 w-10 stroke-1 group-hover:stroke-[1.5px] group-hover:text-indigo-600 transition-all duration-500 ease-in-out mx-auto" />
     <div className="mt-6">

@@ -29,7 +29,7 @@ export const PortfolioComponent = () => {
   const handleMoveNext = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
-  const handleImageClick = (index) => {
+  const handleImageClick = (index: number) => {
     setCurrentImageIndex(index);
     setIsImage(true);
   };

@@ -34,7 +34,7 @@ export const GallerySectionComponent = () => {
     },
   ];
 
-  const handleTabClick = (index) => {
+  const handleTabClick = (index: number) => {
     setisOpen(index);
   };
   return (

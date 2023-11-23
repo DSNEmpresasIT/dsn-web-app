@@ -65,7 +65,6 @@ export const WeAreComponent = () => {
           </div>
           <ModalVideo
             channel="youtube"
-            autoplay
             isOpen={isOpen}
             videoId={weAreComponentData.youtubeIdVideo}
             onClose={() => setIsOpen(false)}

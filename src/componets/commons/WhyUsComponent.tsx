@@ -5,7 +5,7 @@ import { KeyFeature } from '../commons/keyFeatures';
 import { BsCheckCircle } from 'react-icons/bs';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 
-export const FirstCard = ({ img, title, description, checkList, textButton, href }) => (
+export const FirstCard = ({ img, title, description, checkList, textButton, href }: any) => (
   <div className="grid md:grid-cols-2 grid-cols-1 items-center mt-16 gap-[30px]">
     <div
       className="relative wow animate__animated animate__fadeInLeft"
@@ -34,7 +34,7 @@ export const FirstCard = ({ img, title, description, checkList, textButton, href
         {description}
       </p>
       <ul className="list-none text-slate-400 mt-4">
-        {checkList.map((text, key) => (
+        {checkList.map((text: string, key: number) => (
           <li className="mb-1 flex" key={`first-card-key-${key}`}>
             <BsCheckCircle className="text-indigo-600 text-base me-2" />
             <i></i> {text}
@@ -55,7 +55,7 @@ export const FirstCard = ({ img, title, description, checkList, textButton, href
   </div>
 )
 
-const SecondCard = ({ img, title, description, checkList, textButton, href }) => (
+const SecondCard = ({ img, title, description, checkList, textButton, href }: any) => (
   <div className="container relative md:mt-24 mt-16">
     <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
       <div
@@ -85,7 +85,7 @@ const SecondCard = ({ img, title, description, checkList, textButton, href }) =>
           {description}
         </p>
         <ul className="list-none text-slate-400 mt-4">
-        {checkList.map((text, key) => (
+        {checkList.map((text: string, key: number) => (
           <li className="mb-1 flex" key={`first-card-key-${key}`}>
             <BsCheckCircle className="text-indigo-600 text-base me-2" />
             <i></i> {text}

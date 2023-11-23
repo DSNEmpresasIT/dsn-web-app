@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import * as Icon from "react-feather";
-import { PAGES } from "../../../Data/pages";
+import { PAGES } from "@/app/Data/pages";
 
 const NavBarLinks = [
   {

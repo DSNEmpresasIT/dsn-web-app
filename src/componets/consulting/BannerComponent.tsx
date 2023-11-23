@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 import ModalVideo from 'react-modal-video'
-import "../../../../node_modules/react-modal-video/css/modal-video.css";
+import "../../../node_modules/react-modal-video/css/modal-video.css";
 
 import * as Icon from 'react-feather'
 
@@ -30,7 +30,7 @@ export const BannerComponent = () => {
             </div>
         </div>
     </div>
-    <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="S_CGed6E610" onClose={() => setOpen(false)} />
+    <ModalVideo channel='youtube' isOpen={isOpen} videoId="S_CGed6E610" onClose={() => setOpen(false)} />
 
     <div className="absolute md:w-3/4 w-full top-1/2 -translate-y-1/2">
         <div className="absolute w-full h-[5000px] bg-slate-50 dark:bg-slate-800 md:opacity-100 opacity-90 top-1/2 -translate-y-1/2 md:-start-[10%] -start-[25%] ltr:rotate-12 rtl:-rotate-12"></div>

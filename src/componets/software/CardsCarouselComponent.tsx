@@ -1,5 +1,6 @@
-import dynamic from "next/dynamic";
 import React from "react";
+import dynamic from "next/dynamic";
+import Link from "next/link";
 
 import { AiOutlineFire, AiOutlineGitlab } from "react-icons/ai";
 import { FaArrowRight } from "react-icons/fa";
@@ -8,9 +9,8 @@ import { PiBookOpenText } from "react-icons/pi";
 import { RiPresentationFill } from "react-icons/ri";
 import { VscFeedback } from "react-icons/vsc";
 
-import TinySlider from "tiny-slider-react";
-import "../../../../node_modules/tiny-slider/dist/tiny-slider.css";
-import Link from "next/link";
+const TinySlider = dynamic(() => import ("tiny-slider-react"), { ssr: false })
+import "../../../node_modules/tiny-slider/dist/tiny-slider.css";
 
 export const CardsCarouselComponent = () => {
   const services = [
@@ -45,6 +45,7 @@ export const CardsCarouselComponent = () => {
       lesson: "05",
     },
   ];
+
   const settings = {
     container: ".tiny-five-item",
     controls: true,
@@ -80,6 +81,7 @@ export const CardsCarouselComponent = () => {
       },
     },
   };
+
   return (
     <section className="relative md:py-24 py-16">
       <div className="container relative">

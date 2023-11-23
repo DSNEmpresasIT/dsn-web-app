@@ -22,7 +22,7 @@ export const AccordionSectionComponent = () => {
         "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
     },
   ];
-  const toggleAccordion = (index) => {
+  const toggleAccordion = (index: number) => {
     if (activeIndex === index) {
       setActiveIndex(0);
     } else {

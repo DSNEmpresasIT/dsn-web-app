@@ -1,8 +1,8 @@
 'use client'
 import React from "react";
-import { BannerComponent } from "../componets/consulting/BannerComponent";
-import { AccordionSectionComponent } from "../componets/consulting/AccordionSectionComponent";
-import { GallerySectionComponent } from "../componets/consulting/GallerySectionComponent";
+import { BannerComponent } from "@/componets/consulting/BannerComponent";
+import { AccordionSectionComponent } from "@/componets/consulting/AccordionSectionComponent";
+import { GallerySectionComponent } from "@/componets/consulting/GallerySectionComponent";
 import Link from "next/link";
 import { MdOutlineEventNote } from "react-icons/md";
 import CountUp from "react-countup";
