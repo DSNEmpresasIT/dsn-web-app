@@ -4,6 +4,40 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import * as Icon from "react-feather";
+import { PAGES } from "../../../Data/pages";
+
+const NavBarLinks = [
+  {
+    name: 'Home',
+    href: PAGES.HOME,
+  },
+  {
+    name: 'Marketing & Redes',
+    href: PAGES.MARKETING,
+  }, 
+  {
+    name: 'Consultora',
+    href: PAGES.CONSULTING
+  },
+  {
+    name: 'Tecnología',
+    href: '',
+    subLinks: [
+      {
+        name: 'Desarrollo Web & Software',
+        href: PAGES.SOFTWARE_DEVELOPMENT
+      },
+      {
+        name: 'Infraestructura',
+        href: PAGES.INFRAESTRUCTURE
+      }
+    ]
+  },
+  {
+    name: 'Contacto',
+    href: PAGES.CONTACT
+  }
+]
 
 export default function Navbar({ navClass = undefined, navJustify = undefined}) {
   const [isMenu, setisMenu] = useState(false);
@@ -190,7 +224,6 @@ export default function Navbar({ navClass = undefined, navJustify = undefined}) 
               />
             </Link>
           )}
-
           <div className="menu-extras">
             <div className="menu-item">
               <Link
@@ -207,74 +240,33 @@ export default function Navbar({ navClass = undefined, navJustify = undefined}) 
               </Link>
             </div>
           </div>
-
-          {/* {navClass !== "nav-light" ? (
-            <ul className={`buy-button list-none space-x-1 mb-0`}>
-              <li className="inline mb-0">
-                <Link
-                  href="#"
-                  className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600/5 hover:bg-indigo-600 border border-indigo-600/10 hover:border-indigo-600 text-indigo-600 hover:text-white"
-                >
-                  <Icon.Settings className="h-4 w-4" />
-                </Link>
-              </li>
-
-              <li className="inline ps-1 mb-0">
-                <Link
-                  href="https://1.envato.market/techwind-next"
-                  target="_blank"
-                  className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"
-                >
-                  <Icon.ShoppingCart className="h-4 w-4" />
-                </Link>
-              </li>
-            </ul>
-          ) : (
-            <ul className="buy-button list-none space-x-1 mb-0">
-              <li className="inline mb-0">
-                <Link href="#">
-                  <span className="login-btn-primary">
-                    <span className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle transition duration-500 ease-in-out text-base text-center rounded-full bg-indigo-600/5 hover:bg-indigo-600 border border-indigo-600/10 hover:border-indigo-600 text-indigo-600 hover:text-white">
-                      <Icon.Settings className="h-4 w-4" />
-                    </span>
-                  </span>
-                  <span className="login-btn-light">
-                    <span className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle transition duration-500 ease-in-out text-base text-center rounded-full bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 border hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700">
-                      <Icon.Settings className="h-4 w-4" />
-                    </span>
-                  </span>
-                </Link>
-              </li>
-
-              <li className="inline ps-1 mb-0">
-                <Link href="#">
-                  <div className="login-btn-primary">
-                    <span className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle transition duration-500 ease-in-out text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white">
-                      <Icon.ShoppingCart className="h-4 w-4" />
-                    </span>
-                  </div>
-                  <div className="login-btn-light">
-                    <span className="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle transition duration-500 ease-in-out text-base text-center rounded-full bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 border hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700">
-                      <Icon.ShoppingCart className="h-4 w-4" />
-                    </span>
-                  </div>
-                </Link>
-              </li>
-            </ul>
-          )} */}
-
           <div id="navigation" style={{ display: isMenu ? "block" : "none" }}>
             <ul className={`navigation-menu ${navClass} ${navJustify}`}>
-              <li>
-                <Link href="/" className="sub-menu-item">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacto" className="sub-menu-item">
-                  Contacto
-                </Link>
-              </li>
+              {
+                NavBarLinks.map((link, index) => (
+                  <li key={`${index}-nav-bar-key`} className={link.subLinks ? "has-submenu parent-parent-menu-item" : ""}>
+                    <Link href={link.href}>
+                      {link.name} {" "} {link.subLinks && (<span className="menu-arrow"></span>)}
+                    </Link>
+                    {
+                      link.subLinks && (
+                        <ul className="submenu">
+                          {
+                            link.subLinks.map((subLink, index) => (
+                              <li key={`${index}-sublink-nav-key`}>
+                                <Link href={subLink.href} className="sub-menu-item">
+                                  {subLink.name}
+                                </Link>
+                              </li>
+                            ))
+                          }
+                        </ul>
+                      )
+                    }
+                  </li>
+                  )
+                )
+              }
             </ul>
           </div>
         </div>

@@ -5,7 +5,7 @@ import * as Icon from "react-feather";
 import { FaArrowRight } from 'react-icons/fa';
 
 
-export const ItemComponent = ({ Icons, index, item }) => (
+export const ItemComponent = ({ Icons, index, item, textButton = "Read More" }) => (
   <div className="group text-center" key={index}>
     <Icons className="h-10 w-10 stroke-1 group-hover:stroke-[1.5px] group-hover:text-indigo-600 transition-all duration-500 ease-in-out mx-auto" />
     <div className="mt-6">
@@ -23,7 +23,7 @@ export const ItemComponent = ({ Icons, index, item }) => (
           href="#"
           className="relative inline-flex items-center font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:transition-all after:duration-500 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out"
         >
-          Read More <FaArrowRight className="ms-2 text-[10px]" />{" "}
+          {textButton} <FaArrowRight className="ms-2 text-[10px]" />{" "}
         </Link>
       </div>
     </div>
@@ -56,7 +56,7 @@ export const WhoWeAreComponent = () => {
   }
 
   return (
-    <div className="container relative md:mt-24 mt-16">
+    <div className="container relative md:mt-24 mt-16 mb-16">
       <div className="grid grid-cols-1 pb-8 text-center">
         <h6 className="text-indigo-600 text-sm font-bold uppercase mb-2">
           {whoWeAreComponentData.title}
@@ -73,7 +73,7 @@ export const WhoWeAreComponent = () => {
         {whoWeAreComponentData.aboutData.map((item, index) => {
           let Icons = item.icon;
           return (
-            <ItemComponent Icons={Icons} item={item} index={index} />
+            <ItemComponent Icons={Icons} item={item} index={index} key={`${index}-key-who-we-are`} />
           );
         })}
       </div>

@@ -45,7 +45,7 @@ export const CarouselComponent = () => {
         >
           <Slider className="h-full careHeight">
             {carouselComponentData.map((data: CarouselData, index: number) => (
-              <Slide index={index} className="h-full">
+              <Slide index={index} key={`${index}-keys-slider-component`} className="h-full">
                 <div className="flex items-center justify-center transition-all duration-700 ease-in-out h-full overflow-hidden">
                   <div
                     className="absolute inset-0 image-wrap z-1 bg-no-repeat bg-center bg-cover "
