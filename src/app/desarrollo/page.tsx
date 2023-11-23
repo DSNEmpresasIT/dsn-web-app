@@ -8,12 +8,6 @@ import { TechnologiesSection } from '../componets/software/TechnologiesSection';
 import { HowWorksSection } from '../componets/software/HowWorksSection';
 
 const Page = () => {
-  useEffect(() => {
-    document.documentElement.setAttribute("dir", "ltr");
-    document.documentElement.classList.add('dark');
-  }, []);
-
-
   return (
     <>
       <BannerComponent />
