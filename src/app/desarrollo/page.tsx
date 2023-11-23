@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react'
-import { BannerComponent } from '@/componets/consulting/BannerComponent';
+import { BannerComponent } from '@/componets/software/BannerComponent';
 import { HowWorksSection } from '@/componets/software/HowWorksSection';
 import { TechnologiesSection } from '@/componets/software/TechnologiesSection';
 import { CardsCarouselComponent } from '@/componets/software/CardsCarouselComponent';
