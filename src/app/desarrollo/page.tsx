@@ -9,11 +9,11 @@ import { HowWorksSection } from '../componets/software/HowWorksSection';
 
 const Page = () => {
   useEffect(() => {
-    if (typeof window !== "undefined"){
-      document.documentElement.setAttribute("dir", "ltr");
-      document.documentElement.classList.add('dark');
-    }
+    document.documentElement.setAttribute("dir", "ltr");
+    document.documentElement.classList.add('dark');
   }, []);
+
+
   return (
     <>
       <BannerComponent />
