@@ -2,7 +2,7 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { KeyFeatures } from "../../Data/data";
+import { KeyFeatures } from "@/app/Data/data";
 
 interface KeyFeatureProps {
   btnFill: boolean;
