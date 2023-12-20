@@ -7,6 +7,49 @@ import Image from 'next/image';
 import { BsCheckCircle } from 'react-icons/bs';
 
 export const FeaturesTwoComponent = () => {
+  const featuresTwoComponentData = {
+    title: 'Features',
+    subTitle: 'Start working with Tailwind CSS that can provide everything you need to generate awareness, drive traffic, connect.',
+    features: [
+      {
+          icon: MdOutlineJoinInner,
+          title:"Grow Your Business",
+          desc:"If the distribution of letters and words is random, the reader will not be distracted from making.",
+      },
+      {
+          icon: MdOutlineSelectAll,
+          title:"Drive More Sales",
+          desc:"If the distribution of letters and words is random, the reader will not be distracted from making.",
+      },
+      {
+          icon: AiOutlineFire,
+          title:"Handled By Expert",
+          desc:"If the distribution of letters and words is random, the reader will not be distracted from making.",
+      },
+    ],
+    panel_one: {
+      img: '/images/saas/about.jpg',
+      title: 'Manage all your tasks on this one plateform',
+      description: 'Due to its widespread use as filler text for layouts, non-readability is of great importance: human perception is tuned to recognize certain patterns and repetitions in texts. If the distribution of letters visual impact.',
+      textButton: 'Find Out More',
+      subCard: {
+        title: 'Helpcenter Software',
+        description: 'If the distribution of letters and words is random',
+        workInProgress: 84
+      }
+    },
+    panel_two: {
+      img: '/images/saas/classic03.png',
+      title: 'Get Notified About Importent Email',
+      description: 'Due to its widespread use as filler text for layouts, non-readability is of great importance: human perception is tuned to recognize certain patterns and repetitions in texts. If the distribution of letters visual impact.',
+      textButton: 'Find Out More',
+      features: [          
+        'Digital Marketing Solutions for Tomorrow',
+        'Our Talented & Experienced Marketing Agency',
+        'Create your own skin to match your brand',
+      ]
+    },
+  }
   const featuresData = [
     {
         icon: MdOutlineJoinInner,
@@ -32,17 +75,16 @@ export const FeaturesTwoComponent = () => {
         <div className="container relative">
           <div className="grid grid-cols-1 pb-8 text-center">
             <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
-              Features
+              {featuresTwoComponentData.title}
             </h3>
 
             <p className="text-slate-400 max-w-xl mx-auto">
-              Start working with Tailwind CSS that can provide everything you
-              need to generate awareness, drive traffic, connect.
+              {featuresTwoComponentData.subTitle}
             </p>
           </div>
 
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-4 gap-[30px]">
-            {featuresData.map((item, index) => {
+            {featuresTwoComponentData.features.map((item, index) => {
               let Icons = item.icon;
               return (
                 <div
@@ -78,32 +120,32 @@ export const FeaturesTwoComponent = () => {
             <div className="relative">
               <div className="md:me-10">
                 <Image
-                  src="/images/saas/about.jpg"
+                  src={featuresTwoComponentData.panel_one.img}
                   width={0}
                   height={0}
                   sizes="100vw"
                   style={{ width: "100%", height: "auto" }}
                   placeholder="blur"
-                  blurDataURL="/images/saas/about.jpg"
+                  blurDataURL={featuresTwoComponentData.panel_one.img}
                   className="rounded-lg shadow-md dark:shadow-gray-800"
                   alt=""
                 />
               </div>
               <div className="absolute -bottom-10 end-0 p-6 rounded-lg shadow-md dark:shadow-gray-800 bg-white dark:bg-slate-900 md:w-80 w-60">
                 <h5 className="text-lg font-semibold mb-3">
-                  Helpcenter Software
+                  {featuresTwoComponentData.panel_one.subCard.title}
                 </h5>
                 <p className="text-slate-400">
-                  If the distribution of letters and words is random
+                  {featuresTwoComponentData.panel_one.subCard.description}
                 </p>
                 <div className="flex justify-between mt-3 mb-2">
                   <span className="text-slate-400">Work in progress</span>
-                  <span className="text-slate-400">84%</span>
+                  <span className="text-slate-400">{featuresTwoComponentData.panel_one.subCard.workInProgress}%</span>
                 </div>
                 <div className="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-[6px]">
                   <div
                     className="bg-indigo-600 h-[6px] rounded-full"
-                    style={{ width: "84%" }}
+                    style={{ width: `${featuresTwoComponentData.panel_one.subCard.workInProgress}%` }}
                   ></div>
                 </div>
               </div>
@@ -111,13 +153,10 @@ export const FeaturesTwoComponent = () => {
 
             <div className="lg:ms-8 mt-8 md:mt-0">
               <h4 className="mb-4 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">
-                Manage all your tasks <br /> on this one plateform
+                {featuresTwoComponentData.panel_one.title}
               </h4>
               <p className="text-slate-400">
-                Due to its widespread use as filler text for layouts,
-                non-readability is of great importance: human perception is
-                tuned to recognize certain patterns and repetitions in texts. If
-                the distribution of letters visual impact.
+                {featuresTwoComponentData.panel_one.description}
               </p>
 
               <div className="mt-4">
@@ -125,7 +164,7 @@ export const FeaturesTwoComponent = () => {
                   href="/page-aboutus"
                   className="relative inline-flex items-center font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500"
                 >
-                  Find Out More{" "}
+                  {featuresTwoComponentData.panel_one.textButton}{" "}
                   <MdKeyboardArrowRight className="text-xl ms-1" />
                 </Link>
               </div>
@@ -137,9 +176,9 @@ export const FeaturesTwoComponent = () => {
           <div className="grid md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
             <div className="relative order-1 md:order-2">
               <Image
-                src="/images/saas/classic03.png"
+                src={featuresTwoComponentData.panel_two.img}
                 placeholder="blur"
-                blurDataURL="/images/saas/classic03.png"
+                blurDataURL={featuresTwoComponentData.panel_two.img}
                 width={0}
                 height={0}
                 sizes="100vw"
@@ -151,27 +190,18 @@ export const FeaturesTwoComponent = () => {
 
             <div className="lg:me-8 order-2 md:order-1">
               <h4 className="mb-4 text-2xl leading-normal font-medium">
-                Get Notified About Importent Email
+              {featuresTwoComponentData.panel_two.title}
               </h4>
               <p className="text-slate-400">
-                Due to its widespread use as filler text for layouts,
-                non-readability is of great importance: human perception is
-                tuned to recognize certain patterns and repetitions in texts. If
-                the distribution of letters visual impact.
+                {featuresTwoComponentData.panel_two.description}
               </p>
               <ul className="list-none text-slate-400 mt-4">
-                <li className="mb-1 flex items-center">
-                  <BsCheckCircle className="text-indigo-600 text-base me-2" />{" "}
-                  Digital Marketing Solutions for Tomorrow
-                </li>
-                <li className="mb-1 flex items-center">
-                  <BsCheckCircle className="text-indigo-600 text-base me-2" />{" "}
-                  Our Talented & Experienced Marketing Agency
-                </li>
-                <li className="mb-1 flex items-center">
-                  <BsCheckCircle className="text-indigo-600 text-base me-2" />{" "}
-                  Create your own skin to match your brand
-                </li>
+                {featuresTwoComponentData.panel_two.features.map((text: string, index: number) => (
+                  <li className="mb-1 flex items-center" key={index}>
+                    <BsCheckCircle className="text-indigo-600 text-base me-2" />{" "}
+                    {text}
+                  </li>
+                ))}
               </ul>
 
               <div className="mt-4">
@@ -179,7 +209,7 @@ export const FeaturesTwoComponent = () => {
                   href="/page-aboutus"
                   className="relative inline-flex items-center font-semibold tracking-wide align-middle text-base text-center border-none after:content-[''] after:absolute after:h-px after:w-0 hover:after:w-full after:end-0 hover:after:end-auto after:bottom-0 after:start-0 after:duration-500 text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500"
                 >
-                  Find Out More{" "}
+                  {featuresTwoComponentData.panel_two.textButton}{" "}
                   <MdKeyboardArrowRight className="text-xl ms-1" />
                 </Link>
               </div>
@@ -189,3 +219,4 @@ export const FeaturesTwoComponent = () => {
       </section>
   )
 }
+  

@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect } from "react";
 
-import { BannerComponent } from "../componets/contact/BannerComponent";
-import { ContactMethodsComponent } from "../componets/contact/ContactMethodsComponent";
-import { FormImageComponent } from "../componets/contact/FormImageComponent";
-import { FormComponent } from "../componets/contact/FormComponent";
-import { MapComponent } from "../componets/contact/MapComponent";
+import { BannerComponent } from "@/componets/contact/BannerComponent";
+import { ContactMethodsComponent } from "@/componets/contact/ContactMethodsComponent";
+import { FormImageComponent } from "@/componets/contact/FormImageComponent";
+import { FormComponent } from "@/componets/contact/FormComponent";
+import { MapComponent } from "@/componets/contact/MapComponent";
 
 export default function ContactOne() {
   useEffect(() => {

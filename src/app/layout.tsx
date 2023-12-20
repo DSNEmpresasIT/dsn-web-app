@@ -3,9 +3,9 @@ import './assets/css/material.css'
 import dynamic from "next/dynamic";
 import { Nunito, Work_Sans, EB_Garamond, Kaushan_Script, Alex_Brush } from 'next/font/google'
 
-const Navbar = dynamic(() => import("./componets/Navbar/navbar"));
-const Footer = dynamic(() => import("./componets/Footer/smallFooter"));
-const Switcher = dynamic(() => import("./componets/commons/switcher"));
+const Navbar = dynamic(() => import("@/componets/commons/Navbar/navbar"));
+const Footer = dynamic(() => import("@/componets/commons/Footer/smallFooter"));
+const Switcher = dynamic(() => import("@/componets/commons/switcher"));
 
 const nunito = Nunito({
   subsets: ['latin'],
@@ -48,10 +48,12 @@ export const metadata = {
   description: 'DSN Empresas es la combinación perfecta entre marketing y tecnología dentro de Concordia, Entre Ríos y en el resto de las provincias de Argentina.',
 }
 
+{/* @ts-ignore */}
 export default function RootLayout({ children }) {
   return (
-    <html className="dark" lang="en" dir="LTR">
+    <html className="" lang="es" dir="LTR">
       <body className={`${nunito.variable} ${work_sans.variable} ${eb_garamond.variable} ${kaushan.variable} ${alex.variable} font-nunito text-base text-black dark:text-white dark:bg-slate-900`}>
+        {/* @ts-ignore */}
         <Navbar navClass="nav-light" />
         {children}
         <Footer />
